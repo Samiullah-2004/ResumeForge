@@ -1,0 +1,44 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider  = "postgresql"
+  url       = env("DATABASE_URL")
+  directUrl = env("DIRECT_URL")
+}
+
+model User {
+  id           String   @id @default(cuid())
+  name         String
+  email        String   @unique
+  passwordHash String
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+}
+
+// ── v2 models (uncomment when building save/history + PDF export) ──
+//
+// model Resume {
+//   id                  String   @id @default(cuid())
+//   userId              String
+//   user                User     @relation(fields: [userId], references: [id])
+//   jobTitle            String?
+//   company             String?
+//   jobDescription       String
+//   tailoredSummary     String
+//   tailoredSkills      Json
+//   tailoredExperience  Json
+//   coverLetter         String
+//   matchScore          Int
+//   createdAt           DateTime @default(now())
+// }
+//
+// model BaseResume {
+//   id        String   @id @default(cuid())
+//   userId    String
+//   user      User     @relation(fields: [userId], references: [id])
+//   title     String
+//   rawText   String
+//   createdAt DateTime @default(now())
+// }
