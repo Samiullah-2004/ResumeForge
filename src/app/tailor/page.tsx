@@ -190,7 +190,7 @@ export default function TailorPage() {
             {error && (
               <div
                 className="text-sm px-3 py-2 rounded"
-                style={{ background: "#FCEAEA", color: "var(--redline)" }}
+                style={{ background: "rgba(255, 92, 122, 0.1)", color: "var(--redline)", border: "1px solid rgba(255, 92, 122, 0.3)" }}
                 role="alert"
               >
                 {error}

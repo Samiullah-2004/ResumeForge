@@ -1,41 +1,53 @@
-@import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap");
 @import "tailwindcss";
 
 :root {
-  --paper: #f7f5f0;
-  --ink: #14161c;
-  --marker: #ffcf3f;
-  --redline: #d64545;
-  --slate: #5b5f6b;
-  --teal: #0e7c66;
-  --paper-raised: #ffffff;
-  --border-hairline: #e3e0d8;
+  --paper: #0b0c0f;
+  --ink: #ecedf0;
+  --marker: #00a161;
+  --redline: #ff5c7a;
+  --slate: #8b93a1;
+  --teal: #7c5cff;
+  --paper-raised: #15171c;
+  --border-hairline: #2a2d34;
 }
 
 body {
   background: var(--paper);
   color: var(--ink);
-  font-family: "Inter", system-ui, sans-serif;
+  font-family: var(--font-body), system-ui, sans-serif;
 }
 
 .font-display {
-  font-family: "Space Grotesk", system-ui, sans-serif;
+  font-family: var(--font-display), system-ui, sans-serif;
 }
 
 .font-mono {
-  font-family: "JetBrains Mono", monospace;
+  font-family: var(--font-mono), monospace;
 }
 
 .diff-strike {
   color: var(--redline);
   text-decoration: line-through;
   text-decoration-thickness: 1.5px;
-  opacity: 0.7;
+  opacity: 0.75;
 }
 
 .diff-mark {
-  background: var(--marker);
+  background: rgba(57, 255, 176, 0.12);
+  color: var(--marker);
   padding: 0 4px;
   border-radius: 2px;
-  color: var(--ink);
+  box-shadow: 0 0 0 1px rgba(57, 255, 176, 0.3);
+}
+
+button[style*="var(--teal)"],
+a[style*="var(--teal)"] {
+  box-shadow: 0 0 20px rgba(124, 92, 255, 0.35);
+}
+
+input:focus,
+textarea:focus {
+  outline: none;
+  border-color: var(--teal) !important;
+  box-shadow: 0 0 0 2px rgba(124, 92, 255, 0.35);
 }
